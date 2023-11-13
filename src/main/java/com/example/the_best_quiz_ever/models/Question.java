@@ -25,6 +25,7 @@ public class Question {
 
     @ManyToOne
     @JoinColumn (name="outcome_id")
+    @JsonIgnoreProperties ({"question"})
     private Outcome outcome;
 
     @Column

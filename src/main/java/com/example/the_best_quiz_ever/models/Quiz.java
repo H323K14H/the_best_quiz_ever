@@ -1,5 +1,6 @@
 package com.example.the_best_quiz_ever.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import org.hibernate.annotations.JoinColumnOrFormula;
 
@@ -21,6 +22,7 @@ public class Quiz {
     private String name;
 
     @OneToMany(mappedBy = "quiz")
+    @JsonIgnoreProperties ({"outcomes"})
     private List<Outcome> outcomes;
 //    Question questions;
 
