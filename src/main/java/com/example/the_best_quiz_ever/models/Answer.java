@@ -64,5 +64,5 @@ public class Answer {
     public void setAnswerText(String answerText) {
         this.answerText = answerText;
     }
-    
+
 }
