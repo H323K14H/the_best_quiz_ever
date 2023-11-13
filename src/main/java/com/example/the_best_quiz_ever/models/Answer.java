@@ -23,8 +23,7 @@ public class Answer {
     @Column
     private String answerText;
 
-    public Answer(Long id, Question question, Outcome outcome, String answerText) {
-        this.id = id;
+    public Answer(Question question, Outcome outcome, String answerText) {
         this.question = question;
         this.outcome = outcome;
         this.answerText = answerText;

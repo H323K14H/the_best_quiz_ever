@@ -33,10 +33,9 @@ public class Question {
 
 //    constructors
 
-    public Question(Long id, List<Answer> answers,
+    public Question(List<Answer> answers,
                     Quiz quiz, String questionText,
                     Outcome outcome, int questionNumber) {
-        this.id = id;
         this.answers = answers;
         this.quiz = quiz;
         this.questionText = questionText;

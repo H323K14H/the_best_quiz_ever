@@ -30,8 +30,7 @@ public class Quiz {
     private int currentQuestion;
 
 //    constructor
-    public Quiz(Long id, List<Question> questions, String name, List<Outcome> outcomes, int currentQuestion) {
-        this.id = id;
+    public Quiz(List<Question> questions, String name, List<Outcome> outcomes, int currentQuestion) {
         this.questions = questions;
         this.name = name;
         this.outcomes = outcomes;

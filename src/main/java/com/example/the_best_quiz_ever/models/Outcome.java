@@ -22,8 +22,7 @@ public class Outcome {
     @Column
     private String outcome;
 
-    public Outcome(Long id, Quiz quiz, List<Answer> answers, String outcome) {
-        this.id = id;
+    public Outcome( Quiz quiz, List<Answer> answers, String outcome) {
         this.quiz = quiz;
         this.answers = answers;
         this.outcome = outcome;
