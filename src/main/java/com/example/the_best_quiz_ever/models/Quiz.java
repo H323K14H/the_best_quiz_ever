@@ -17,13 +17,14 @@ public class Quiz {
     private Long id;
 
     @OneToMany(mappedBy = "quiz")
+    @JsonIgnoreProperties({"quiz"})
     private List<Question> questions;
 
     @Column
     private String name;
 
     @OneToMany(mappedBy = "quiz")
-    @JsonIgnoreProperties({"outcomes"})
+    @JsonIgnoreProperties({"quiz"})
     private List<Outcome> outcomes;
 //    Question questions;
 

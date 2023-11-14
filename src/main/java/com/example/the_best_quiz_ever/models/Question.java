@@ -14,11 +14,13 @@ public class Question {
     private Long id;
 
     @OneToMany(mappedBy = "question")
+    @JsonIgnoreProperties({"question"})
     private List<Answer> answers;
+
 
     @ManyToOne
     @JoinColumn (name="quiz_id")
-//    @JsonIgnoreProperties({"questions"})
+    @JsonIgnoreProperties({"questions"})
     private Quiz quiz;
 
     @Column

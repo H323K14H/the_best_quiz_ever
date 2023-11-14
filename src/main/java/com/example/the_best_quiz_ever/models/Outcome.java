@@ -20,14 +20,19 @@ public class Outcome {
     @JsonIgnoreProperties ({"outcomes"})
     private Quiz quiz;
     @OneToMany (mappedBy = "outcome")
+    @JsonIgnoreProperties ({"outcome"})
     private List<Answer> answers;
     @Column
     private String outcome;
+//    @OneToMany (mappedBy = "outcome")
+//    @JsonIgnoreProperties({"outcome"})
+//    private Question question;
 
     public Outcome(Quiz quiz, String outcome) {
         this.quiz = quiz;
         this.answers = new ArrayList<>();
         this.outcome = outcome;
+//        this.question = null;
     }
 
     public Outcome() {
@@ -70,4 +75,12 @@ public class Outcome {
     public void setOutcome(String outcome) {
         this.outcome = outcome;
     }
+
+//    public Question getQuestion() {
+//        return question;
+//    }
+//
+//    public void setQuestion(Question question) {
+//        this.question = question;
+//    }
 }
