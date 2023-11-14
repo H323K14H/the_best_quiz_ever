@@ -15,28 +15,25 @@ public class Quiz {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column
+    private String name;
+    @Column
+    private int currentQuestion;
 
     @OneToMany(mappedBy = "quiz")
     @JsonIgnoreProperties({"quiz"})
     private List<Question> questions;
 
-    @Column
-    private String name;
-
 //    @OneToMany(mappedBy = "quiz")
 //    @JsonIgnoreProperties({"quiz"})
 //    private List<Outcome> outcomes;
 
-
-    @Column
-    private int currentQuestion;
-
     //    constructor
     public Quiz(String name, int currentQuestion) {
-        this.questions = new ArrayList<>();
         this.name = name;
 //        this.outcomes = new ArrayList<>();
         this.currentQuestion = currentQuestion;
+        this.questions = new ArrayList<>();
     }
 
     public Quiz() {
@@ -60,13 +57,13 @@ public class Quiz {
         this.id = id;
     }
 
-    public List<Question> getQuestions() {
-        return questions;
-    }
-
-    public void setQuestions(List<Question> questions) {
-        this.questions = questions;
-    }
+//    public List<Question> getQuestions() {
+//        return questions;
+//    }
+//
+//    public void setQuestions(List<Question> questions) {
+//        this.questions = questions;
+//    }
 
     public String getName() {
         return name;

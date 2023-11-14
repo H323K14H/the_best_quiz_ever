@@ -17,7 +17,6 @@ public class Question {
     @JsonIgnoreProperties({"question"})
     private List<Answer> answers;
 
-
     @ManyToOne
     @JoinColumn (name="quiz_id")
     @JsonIgnoreProperties({"questions"})
@@ -28,7 +27,7 @@ public class Question {
 
 //    @ManyToOne
 //    @JoinColumn (name="outcome_id")
-//    @JsonIgnoreProperties ({"questions"})
+//    @JsonIgnoreProperties ({"question"})
 //    private Outcome outcome;
 
     @Column
@@ -37,11 +36,11 @@ public class Question {
 //    constructors
 
     public Question(Quiz quiz, String questionText, Outcome outcome, int questionNumber) {
-        this.answers = new ArrayList<>();
         this.quiz = quiz;
         this.questionText = questionText;
 //        this.outcome = outcome;
         this.questionNumber = questionNumber;
+        this.answers = new ArrayList<>();
     }
 
     public Question() {

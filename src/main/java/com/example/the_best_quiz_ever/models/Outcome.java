@@ -15,6 +15,7 @@ public class Outcome {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
 //    @ManyToOne
 //    @JoinColumn (name = "quiz_id")
 //    @JsonIgnoreProperties ({"outcomes"})
@@ -26,13 +27,14 @@ public class Outcome {
     private String outcome;
 //    @OneToMany (mappedBy = "outcome")
 //    @JsonIgnoreProperties({"outcome"})
-//    private List<Question> questions;
+//    private Question question;
 
-    public Outcome(Quiz quiz, String outcome) {  //remove quiz
+    public Outcome(Quiz quiz, String outcome) {
 //        this.quiz = quiz;
-        this.answers = new ArrayList<>();
         this.outcome = outcome;
-//        this.questions = new ArrayList<>();
+        this.answers = new ArrayList<>();
+
+//        this.question = null;
     }
 
     public Outcome() {
@@ -76,11 +78,11 @@ public class Outcome {
         this.outcome = outcome;
     }
 
-//    public List<Question> getQuestions() {
-//        return questions;
+//    public Question getQuestion() {
+//        return question;
 //    }
 //
-//    public void setQuestions(List<Question> questions) {
-//        this.questions = questions;
+//    public void setQuestion(Question question) {
+//        this.question = question;
 //    }
 }
