@@ -26,10 +26,10 @@ public class Question {
     @Column
     private String questionText;
 
-//    @ManyToOne
-//    @JoinColumn (name="outcome_id")
-//    @JsonIgnoreProperties ({"questions"})
-//    private Outcome outcome;
+    @ManyToOne
+    @JoinColumn (name="outcome_id")
+    @JsonIgnoreProperties ({"question"})
+    private Outcome outcome;
 
     @Column
     private int questionNumber;
@@ -40,7 +40,7 @@ public class Question {
         this.answers = new ArrayList<>();
         this.quiz = quiz;
         this.questionText = questionText;
-//        this.outcome = outcome;
+        this.outcome = outcome;
         this.questionNumber = questionNumber;
     }
 
@@ -85,13 +85,13 @@ public class Question {
         this.questionText = questionText;
     }
 
-//    public Outcome getOutcome() {
-//        return outcome;
-//    }
-//
-//    public void setOutcome(Outcome outcome) {
-//        this.outcome = outcome;
-//    }
+    public Outcome getOutcome() {
+        return outcome;
+    }
+
+    public void setOutcome(Outcome outcome) {
+        this.outcome = outcome;
+    }
 
     public int getQuestionNumber() {
         return questionNumber;

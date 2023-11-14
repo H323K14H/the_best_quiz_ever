@@ -23,10 +23,10 @@ public class Quiz {
     @Column
     private String name;
 
-//    @OneToMany(mappedBy = "quiz")
-//    @JsonIgnoreProperties({"quiz"})
-//    private List<Outcome> outcomes;
-
+    @OneToMany(mappedBy = "quiz")
+    @JsonIgnoreProperties({"quiz"})
+    private List<Outcome> outcomes;
+//    Question questions;
 
     @Column
     private int currentQuestion;
@@ -35,7 +35,7 @@ public class Quiz {
     public Quiz(String name, int currentQuestion) {
         this.questions = new ArrayList<>();
         this.name = name;
-//        this.outcomes = new ArrayList<>();
+        this.outcomes = new ArrayList<>();
         this.currentQuestion = currentQuestion;
     }
 
@@ -47,9 +47,9 @@ public class Quiz {
         this.questions.add(question);
     }
 
-//    public void addOutcome(Outcome outcome) {
-//        this.outcomes.add(outcome);
-//    }
+    public void addOutcome(Outcome outcome) {
+        this.outcomes.add(outcome);
+    }
 
     //    getters and setters
     public Long getId() {
@@ -76,13 +76,13 @@ public class Quiz {
         this.name = name;
     }
 
-//    public List<Outcome> getOutcomes() {
-//        return outcomes;
-//    }
-//
-//    public void setOutcomes(List<Outcome> outcomes) {
-//        this.outcomes = outcomes;
-//    }
+    public List<Outcome> getOutcomes() {
+        return outcomes;
+    }
+
+    public void setOutcomes(List<Outcome> outcomes) {
+        this.outcomes = outcomes;
+    }
 
     public int getCurrentQuestion() {
         return currentQuestion;
