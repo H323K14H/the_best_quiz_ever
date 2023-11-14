@@ -10,6 +10,7 @@ import java.util.List;
 @Table(name = "outcomes")
 public class Outcome {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
