@@ -15,28 +15,25 @@ public class Quiz {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column
+    private String name;
+    @Column
+    private int currentQuestion;
 
     @OneToMany(mappedBy = "quiz")
     @JsonIgnoreProperties({"quiz"})
     private List<Question> questions;
 
-    @Column
-    private String name;
-
-    @OneToMany(mappedBy = "quiz")
-    @JsonIgnoreProperties({"quiz"})
-    private List<Outcome> outcomes;
-//    Question questions;
-
-    @Column
-    private int currentQuestion;
+//    @OneToMany(mappedBy = "quiz")
+//    @JsonIgnoreProperties({"quiz"})
+//    private List<Outcome> outcomes;
 
     //    constructor
     public Quiz(String name, int currentQuestion) {
-        this.questions = new ArrayList<>();
         this.name = name;
-        this.outcomes = new ArrayList<>();
+//        this.outcomes = new ArrayList<>();
         this.currentQuestion = currentQuestion;
+        this.questions = new ArrayList<>();
     }
 
     public Quiz() {
@@ -47,9 +44,9 @@ public class Quiz {
         this.questions.add(question);
     }
 
-    public void addOutcome(Outcome outcome) {
-        this.outcomes.add(outcome);
-    }
+//    public void addOutcome(Outcome outcome) {
+//        this.outcomes.add(outcome);
+//    }
 
     //    getters and setters
     public Long getId() {
@@ -60,13 +57,13 @@ public class Quiz {
         this.id = id;
     }
 
-    public List<Question> getQuestions() {
-        return questions;
-    }
-
-    public void setQuestions(List<Question> questions) {
-        this.questions = questions;
-    }
+//    public List<Question> getQuestions() {
+//        return questions;
+//    }
+//
+//    public void setQuestions(List<Question> questions) {
+//        this.questions = questions;
+//    }
 
     public String getName() {
         return name;
@@ -76,13 +73,13 @@ public class Quiz {
         this.name = name;
     }
 
-    public List<Outcome> getOutcomes() {
-        return outcomes;
-    }
-
-    public void setOutcomes(List<Outcome> outcomes) {
-        this.outcomes = outcomes;
-    }
+//    public List<Outcome> getOutcomes() {
+//        return outcomes;
+//    }
+//
+//    public void setOutcomes(List<Outcome> outcomes) {
+//        this.outcomes = outcomes;
+//    }
 
     public int getCurrentQuestion() {
         return currentQuestion;

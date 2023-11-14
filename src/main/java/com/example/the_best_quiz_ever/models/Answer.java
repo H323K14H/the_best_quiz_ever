@@ -25,8 +25,8 @@ public class Answer {
 
     public Answer(Question question, Outcome outcome, String answerText) {
         this.question = question;
-        this.outcome = outcome;
         this.answerText = answerText;
+        this.outcome = outcome;
     }
 
     public Answer() {
