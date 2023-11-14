@@ -24,9 +24,13 @@ public class QuizService {
         return quizRepository.findAll();
     }
 
-    public Reply startQuiz(){
-
+    public Quiz getQuizById(Long id){
+        return quizRepository.findById(id).get();
     }
+
+//    public Reply startQuiz(){
+//
+//    }
 
 
     

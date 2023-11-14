@@ -3,6 +3,7 @@ package com.example.the_best_quiz_ever.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -33,10 +34,8 @@ public class Question {
 
 //    constructors
 
-    public Question(List<Answer> answers,
-                    Quiz quiz, String questionText,
-                    Outcome outcome, int questionNumber) {
-        this.answers = answers;
+    public Question(Quiz quiz, String questionText, Outcome outcome, int questionNumber) {
+        this.answers = new ArrayList<>();
         this.quiz = quiz;
         this.questionText = questionText;
         this.outcome = outcome;
@@ -44,6 +43,10 @@ public class Question {
     }
 
     public Question() {
+    }
+
+    public void addAnswer(Answer answer){
+        this.answers.add(answer);
     }
 
 //    getters and setters

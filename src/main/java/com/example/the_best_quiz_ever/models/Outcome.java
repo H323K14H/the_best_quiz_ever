@@ -4,6 +4,7 @@ package com.example.the_best_quiz_ever.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -23,15 +24,20 @@ public class Outcome {
     @Column
     private String outcome;
 
-    public Outcome( Quiz quiz, List<Answer> answers, String outcome) {
+    public Outcome(Quiz quiz, String outcome) {
         this.quiz = quiz;
-        this.answers = answers;
+        this.answers = new ArrayList<>();
         this.outcome = outcome;
     }
 
     public Outcome() {
 
     }
+
+    public void addAnswer(Answer answer){
+        this.answers.add(answer);
+    }
+
 
     public Long getId() {
         return id;

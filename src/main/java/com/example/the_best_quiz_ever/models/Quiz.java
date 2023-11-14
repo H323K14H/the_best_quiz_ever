@@ -4,13 +4,14 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import org.hibernate.annotations.JoinColumnOrFormula;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "quizzes")
 public class Quiz {
 
-//    properties
+    //    properties
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,26 +23,34 @@ public class Quiz {
     private String name;
 
     @OneToMany(mappedBy = "quiz")
-    @JsonIgnoreProperties ({"outcomes"})
+    @JsonIgnoreProperties({"outcomes"})
     private List<Outcome> outcomes;
 //    Question questions;
 
     @Column
     private int currentQuestion;
 
-//    constructor
-    public Quiz(List<Question> questions, String name, List<Outcome> outcomes, int currentQuestion) {
-        this.questions = questions;
+    //    constructor
+    public Quiz(String name, int currentQuestion) {
+        this.questions = new ArrayList<>();
         this.name = name;
-        this.outcomes = outcomes;
+        this.outcomes = new ArrayList<>();
         this.currentQuestion = currentQuestion;
     }
 
-    public Quiz(){
+    public Quiz() {
 
     }
 
-//    getters and setters 
+    public void addQuestion(Question question) {
+        this.questions.add(question);
+    }
+
+    public void addOutcome(Outcome outcome) {
+        this.outcomes.add(outcome);
+    }
+
+    //    getters and setters
     public Long getId() {
         return id;
     }
