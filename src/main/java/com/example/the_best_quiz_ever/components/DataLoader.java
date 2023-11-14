@@ -21,16 +21,16 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     QuizRepository quizRepository;
 
-//    @Autowired
-//    QuestionRepository questionRepository;
-//
-//    @Autowired
-//    AnswerRepository answerRepository;
-//
-//    @Autowired
-//    OutcomeRepository outcomeRepository;
+    @Autowired
+    QuestionRepository questionRepository;
 
-    public DataLoader(){
+    @Autowired
+    AnswerRepository answerRepository;
+
+    @Autowired
+    OutcomeRepository outcomeRepository;
+
+    public DataLoader() {
 
     }
 
@@ -38,8 +38,14 @@ public class DataLoader implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
         Quiz quiz1 = new Quiz("Animal quizz", 1);
         quizRepository.save(quiz1);
-//        Question q1 = new Question();
-//        Answer a1 = new Answer();
-//        Outcome o1 = new Outcome();
+
+        Question q1 = new Question(quiz1, "How are you feeling?", null, 1);
+        questionRepository.save(q1);
+
+        Outcome o1 = new Outcome(quiz1, "Slothhhh");
+        outcomeRepository.save(o1);
+
+        Answer a1 = new Answer(q1, o1, "a");
+        answerRepository.save(a1);
     }
 }
