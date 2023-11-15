@@ -9,13 +9,15 @@ public class Reply {
 
     private Question nextQuestion;
 
-    private Outcome outcome;
+//    private Outcome outcome;
+
+    private OutcomeDTO outcomeDTO;
 
 
-    public Reply(Question nextQuestion, Outcome outcome) {
+    public Reply(Question nextQuestion, OutcomeDTO outcomeDTO) {
 
         this.nextQuestion = nextQuestion;
-        this.outcome = outcome;
+        this.outcomeDTO = outcomeDTO;
     }
 
     public Reply(){
@@ -30,11 +32,11 @@ public class Reply {
         this.nextQuestion = nextQuestion;
     }
 
-    public Outcome getOutcome() {
-        return outcome;
+    public OutcomeDTO getOutcomeDTO() {
+        return outcomeDTO;
     }
 
-    public void setOutcome(Outcome outcome) {
-        this.outcome = outcome;
+    public void setOutcomeDTO(OutcomeDTO outcomeDTO) {
+        this.outcomeDTO = outcomeDTO;
     }
 } // last

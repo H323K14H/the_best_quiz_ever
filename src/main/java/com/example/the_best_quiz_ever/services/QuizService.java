@@ -1,5 +1,6 @@
 package com.example.the_best_quiz_ever.services;
 
+import com.example.the_best_quiz_ever.model_DTOs.OutcomeDTO;
 import com.example.the_best_quiz_ever.models.Answer;
 import com.example.the_best_quiz_ever.models.Outcome;
 import com.example.the_best_quiz_ever.models.Question;
@@ -67,7 +68,9 @@ public class QuizService {
 
         if (quiz.getCurrentQuestion() > 9) {
              Outcome finalOutcome = processOutcome(selectedOptions);
-             return new Reply(null, finalOutcome);
+             OutcomeDTO finalResult = new OutcomeDTO(finalOutcome.getOutcome());
+             Reply reply = new Reply(null, finalResult);
+             return reply;
         }
 
         quiz.setCurrentQuestion(quiz.getCurrentQuestion() + 1);

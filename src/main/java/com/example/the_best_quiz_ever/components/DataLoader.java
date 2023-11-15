@@ -59,7 +59,7 @@ public class DataLoader implements ApplicationRunner {
         questionRepository.save(q4);
         quiz1.addQuestion(q4);
 
-        Question q5 = new Question(quiz1, "How are you feeling?", 7);
+        Question q5 = new Question(quiz1, "How are you feeling?", 5);
         questionRepository.save(q5);
         quiz1.addQuestion(q5);
 
