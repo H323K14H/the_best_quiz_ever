@@ -48,7 +48,7 @@ public class QuizService {
         Quiz quiz = quizRepository.findById(id).get();
         long q1_id = 1;
         Question q1 = questionRepository.findById(q1_id).get();
-        Reply reply = new Reply(q1);
+        Reply reply = new Reply(q1, null);
         return reply;
     }
 
@@ -66,8 +66,8 @@ public class QuizService {
 //        increment current question.
 
         if (quiz.getCurrentQuestion() > 9) {
-//            Outcome finalOutcome = processOutcome(selectedOptions);
-             return null;
+             Outcome finalOutcome = processOutcome(selectedOptions);
+             return new Reply(null, finalOutcome);
         }
 
         quiz.setCurrentQuestion(quiz.getCurrentQuestion() + 1);
@@ -75,7 +75,7 @@ public class QuizService {
 
 //        return currentQ = nextQ
         Question nextQ = questionRepository.findById(quiz.getCurrentQuestion()).get();
-        return new Reply(nextQ);
+        return new Reply(nextQ, null);
     }
 
 //    method - tally results and print outcome

@@ -14,7 +14,7 @@ public class Question {
     @JoinColumn (name="quiz_id")
     @JsonIgnoreProperties({"questions"})
     private Quiz quiz;
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
