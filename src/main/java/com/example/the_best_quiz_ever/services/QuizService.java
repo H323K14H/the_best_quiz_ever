@@ -67,10 +67,10 @@ public class QuizService {
 //        increment current question.
 
         if (quiz.getCurrentQuestion() > quiz.getSize() - 1) {
-             Outcome finalOutcome = processOutcome(selectedOptions);
-             OutcomeDTO finalResult = new OutcomeDTO(finalOutcome.getOutcome());
-             Reply reply = new Reply(null, finalResult);
-             return reply;
+            Outcome finalOutcome = processOutcome(selectedOptions);
+            OutcomeDTO finalResult = new OutcomeDTO(finalOutcome.getOutcome());
+            Reply reply = new Reply(null, finalResult);
+            return reply;
         }
 
         quiz.setCurrentQuestion(quiz.getCurrentQuestion() + 1);
@@ -83,42 +83,39 @@ public class QuizService {
 
 //    method - tally results and print outcome
 
-    public Outcome processOutcome(List<Long> selectedOption){
+    public Outcome processOutcome(List<Long> selectedOption) {
         int count1 = 0;
         int count2 = 0;
         int count3 = 0;
         int count4 = 0;
 
 //      count for each outcome
-        for (Long outcomeId: selectedOption) {
-            if (outcomeId == 1){
-              count1 += 1;
-            }
-                else if (outcomeId == 2){
-              count2 += 1;
-            }
-                else if (outcomeId == 3){
-              count3 += 1;
-            }
-                else if (outcomeId == 4){
-              count4 += 1;
+        for (Long outcomeId : selectedOption) {
+            if (outcomeId == 1) {
+                count1 += 1;
+            } else if (outcomeId == 2) {
+                count2 += 1;
+            } else if (outcomeId == 3) {
+                count3 += 1;
+            } else if (outcomeId == 4) {
+                count4 += 1;
             }
 
         }
 
         int modeCount = count1;
         Long modeId = 1L;
-        if (count2 > modeCount){
+        if (count2 > modeCount) {
             modeCount = count2;
-             modeId = 2L;
+            modeId = 2L;
         }
 
-        if (count3 > modeCount){
+        if (count3 > modeCount) {
             modeCount = count3;
             modeId = 3L;
         }
 
-        if (count4 > modeCount){
+        if (count4 > modeCount) {
             modeCount = count4;
             modeId = 4L;
         }

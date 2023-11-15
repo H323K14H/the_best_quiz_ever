@@ -12,12 +12,12 @@ public class Answer {
     private Long id;
 
     @ManyToOne
-    @JoinColumn (name="question_id")
+    @JoinColumn(name = "question_id")
     @JsonIgnoreProperties({"answers"})
     private Question question;
 
     @ManyToOne
-    @JoinColumn (name="outcome_id")
+    @JoinColumn(name = "outcome_id")
     @JsonIgnoreProperties({"answers"})
     private Outcome outcome;
     @Column

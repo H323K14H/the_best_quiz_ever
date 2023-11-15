@@ -11,7 +11,7 @@ import java.util.List;
 public class Question {
 
     @ManyToOne
-    @JoinColumn (name="quiz_id")
+    @JoinColumn(name = "quiz_id")
     @JsonIgnoreProperties({"questions"})
     private Quiz quiz;
 
@@ -49,7 +49,7 @@ public class Question {
     public Question() {
     }
 
-    public void addAnswer(Answer answer){
+    public void addAnswer(Answer answer) {
         this.answers.add(answer);
     }
 

@@ -6,7 +6,6 @@ import com.example.the_best_quiz_ever.models.Question;
 public class Reply {
 
 
-
     private Question nextQuestion;
 
 //    private Outcome outcome;
@@ -20,7 +19,7 @@ public class Reply {
         this.outcomeDTO = outcomeDTO;
     }
 
-    public Reply(){
+    public Reply() {
 
     }
 

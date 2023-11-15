@@ -16,12 +16,12 @@ public class Outcome {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-//    @ManyToOne
+    //    @ManyToOne
 //    @JoinColumn (name = "quiz_id")
 //    @JsonIgnoreProperties ({"outcomes"})
 //    private Quiz quiz;
-    @OneToMany (mappedBy = "outcome")
-    @JsonIgnoreProperties ({"outcome", "answers"})
+    @OneToMany(mappedBy = "outcome")
+    @JsonIgnoreProperties({"outcome", "answers"})
     private List<Answer> answers;
     @Column
     private String outcome;
@@ -41,7 +41,7 @@ public class Outcome {
 
     }
 
-    public void addAnswer(Answer answer){
+    public void addAnswer(Answer answer) {
         this.answers.add(answer);
     }
 
