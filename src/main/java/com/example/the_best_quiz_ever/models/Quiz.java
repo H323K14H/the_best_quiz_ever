@@ -57,10 +57,10 @@ public class Quiz {
         this.id = id;
     }
 
-//    public List<Question> getQuestions() {
+//    public List<Question> getAllQuestions() {
 //        return questions;
 //    }
-//
+
 //    public void setQuestions(List<Question> questions) {
 //        this.questions = questions;
 //    }
@@ -88,4 +88,7 @@ public class Quiz {
     public void setCurrentQuestion(int currentQuestion) {
         this.currentQuestion = currentQuestion;
     }
+
+
+
 } // last
