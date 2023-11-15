@@ -89,6 +89,7 @@ public class Quiz {
         this.currentQuestion = currentQuestion;
     }
 
-
-
+    public int getSize() {
+        return this.questions.size();
+    }
 } // last
