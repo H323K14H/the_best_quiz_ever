@@ -61,9 +61,9 @@ public class QuizService {
 
 //        increment current question.
 
-//        if (quiz.getCurrentQuestion() > 9) {
-//
-//        }
+        if (quiz.getCurrentQuestion() > 9) {
+             return null;
+        }
 
         quiz.setCurrentQuestion(quiz.getCurrentQuestion() + 1);
         quizRepository.save(quiz);
