@@ -66,6 +66,7 @@ public class QuizService {
 //        increment current question.
 
         if (quiz.getCurrentQuestion() > 9) {
+//            Outcome finalOutcome = processOutcome(selectedOptions);
              return null;
         }
 
