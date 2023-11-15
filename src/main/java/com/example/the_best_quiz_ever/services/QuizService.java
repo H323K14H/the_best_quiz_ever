@@ -6,6 +6,7 @@ import com.example.the_best_quiz_ever.models.Question;
 import com.example.the_best_quiz_ever.models.Quiz;
 import com.example.the_best_quiz_ever.model_DTOs.Reply;
 import com.example.the_best_quiz_ever.repositories.AnswerRepository;
+import com.example.the_best_quiz_ever.repositories.OutcomeRepository;
 import com.example.the_best_quiz_ever.repositories.QuestionRepository;
 import com.example.the_best_quiz_ever.repositories.QuizRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,9 @@ import java.util.List;
 public class QuizService {
     @Autowired
     QuizRepository quizRepository;
+
+    @Autowired
+    OutcomeRepository outcomeRepository;
 
     @Autowired
     QuestionRepository questionRepository;
@@ -71,6 +75,51 @@ public class QuizService {
 //        return currentQ = nextQ
         Question nextQ = questionRepository.findById(quiz.getCurrentQuestion()).get();
         return new Reply(nextQ);
+    }
+
+//    method - tally results and print outcome
+
+    public Outcome processOutcome(List<Long> selectedOption){
+        int count1 = 0;
+        int count2 = 0;
+        int count3 = 0;
+        int count4 = 0;
+
+//      count for each outcome
+        for (Long outcomeId: selectedOption) {
+            if (outcomeId == 1){
+              count1 += 1;
+            }
+                else if (outcomeId == 2){
+              count2 += 1;
+            }
+                else if (outcomeId == 3){
+              count3 += 1;
+            }
+                else if (outcomeId == 4){
+              count4 += 1;
+            }
+
+        }
+
+        int modeCount = count1;
+        Long modeId = 1L;
+        if (count2 > modeCount){
+            modeCount = count2;
+             modeId = 2L;
+        }
+
+        if (count3 > modeCount){
+            modeCount = count3;
+            modeId = 3L;
+        }
+
+        if (count4 > modeCount){
+            modeCount = count4;
+            modeId = 4L;
+        }
+
+        return outcomeRepository.findById(modeId).get();
     }
 
 
