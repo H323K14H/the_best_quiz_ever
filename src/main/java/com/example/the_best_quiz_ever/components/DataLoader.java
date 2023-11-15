@@ -51,7 +51,7 @@ public class DataLoader implements ApplicationRunner {
         questionRepository.save(q2);
         quiz1.addQuestion(q2);
 
-        Question q3 = new Question(quiz1, "How are you feeling?", 3);
+        Question q3 = new Question(quiz1, "Third question?", 3);
         questionRepository.save(q3);
         quiz1.addQuestion(q3);
 
@@ -114,6 +114,23 @@ public class DataLoader implements ApplicationRunner {
         Answer a4 = new Answer(q1, panda, "D");
         answerRepository.save(a4);
         q1.addAnswer(a4);
+
+//        answers for q2
+        Answer a5 = new Answer(q2, sloth, "A");
+        answerRepository.save(a5);
+        q2.addAnswer(a5);
+
+        Answer a6 = new Answer(q2, flamingo, "B");
+        answerRepository.save(a6);
+        q2.addAnswer(a6);
+
+        Answer a7 = new Answer(q2, octopus, "C");
+        answerRepository.save(a7);
+        q2.addAnswer(a7);
+
+        Answer a8 = new Answer(q2, panda, "D");
+        answerRepository.save(a8);
+        q2.addAnswer(a8);
 
     }
 }

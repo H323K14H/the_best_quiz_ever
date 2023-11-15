@@ -66,7 +66,7 @@ public class QuizService {
 //        }
 
         quiz.setCurrentQuestion(quiz.getCurrentQuestion() + 1);
-
+        quizRepository.save(quiz);
 
 //        return currentQ = nextQ
         Question nextQ = questionRepository.findById(quiz.getCurrentQuestion()).get();
