@@ -9,29 +9,32 @@ import java.util.List;
 @Entity
 @Table(name = "questions")
 public class Question {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @OneToMany(mappedBy = "question")
-    @JsonIgnoreProperties({"question"})
-    private List<Answer> answers;
 
     @ManyToOne
     @JoinColumn (name="quiz_id")
     @JsonIgnoreProperties({"questions"})
     private Quiz quiz;
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column
+    private int questionNumber;
 
     @Column
     private String questionText;
+
+    @OneToMany(mappedBy = "question")
+    @JsonIgnoreProperties({"question", "outcome"})
+    private List<Answer> answers;
+
 
 //    @ManyToOne
 //    @JoinColumn (name="outcome_id")
 //    @JsonIgnoreProperties ({"question"})
 //    private Outcome outcome;
 
-    @Column
-    private int questionNumber;
 
 //    constructors
 

@@ -1,4 +1,6 @@
-package com.example.the_best_quiz_ever.models;
+package com.example.the_best_quiz_ever.model_DTOs;
+
+import com.example.the_best_quiz_ever.models.Question;
 
 public class Reply {
 

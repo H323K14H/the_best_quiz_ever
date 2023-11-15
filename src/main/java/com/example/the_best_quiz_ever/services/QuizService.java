@@ -2,7 +2,7 @@ package com.example.the_best_quiz_ever.services;
 
 import com.example.the_best_quiz_ever.models.Question;
 import com.example.the_best_quiz_ever.models.Quiz;
-import com.example.the_best_quiz_ever.models.Reply;
+import com.example.the_best_quiz_ever.model_DTOs.Reply;
 import com.example.the_best_quiz_ever.repositories.QuestionRepository;
 import com.example.the_best_quiz_ever.repositories.QuizRepository;
 import org.springframework.beans.factory.annotation.Autowired;
