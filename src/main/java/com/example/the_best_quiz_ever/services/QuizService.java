@@ -25,7 +25,7 @@ public class QuizService {
     @Autowired
     AnswerRepository answerRepository;
 
-    private ArrayList<Long> selectedOptions;
+    private ArrayList<Long> selectedOptions = new ArrayList<>();
 
     public QuizService() {
 

@@ -38,7 +38,7 @@ public class DataLoader implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
 
 //        create new quiz
-        Quiz quiz1 = new Quiz("Animal Quiz", 1);
+        Quiz quiz1 = new Quiz("Animal Quiz", 1L);
         quizRepository.save(quiz1);
 
 //        create questions
