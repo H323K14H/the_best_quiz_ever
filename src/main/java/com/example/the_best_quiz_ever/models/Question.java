@@ -35,7 +35,7 @@ public class Question {
 
 //    constructors
 
-    public Question(Quiz quiz, String questionText, Outcome outcome, int questionNumber) {
+    public Question(Quiz quiz, String questionText, int questionNumber) {
         this.quiz = quiz;
         this.questionText = questionText;
 //        this.outcome = outcome;
