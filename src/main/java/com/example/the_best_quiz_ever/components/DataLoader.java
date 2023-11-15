@@ -42,9 +42,10 @@ public class DataLoader implements ApplicationRunner {
         quizRepository.save(quiz1);
 
 //        create questions
-        Question q1 = new Question(quiz1, "How are you feeling?", 1);
+        Question q1 = new Question(quiz1, "If you could have any superpower, which would you choose?", 1);
         questionRepository.save(q1);
         quiz1.addQuestion(q1);
+
 
         Question q2 = new Question(quiz1, "How are you feeling?", 2);
         questionRepository.save(q2);
@@ -84,12 +85,35 @@ public class DataLoader implements ApplicationRunner {
 
         quizRepository.save(quiz1);
 
-//
+//      create outcomes
+        Outcome sloth = new Outcome(quiz1, "Sloth");
+        outcomeRepository.save(sloth);
 
-        Outcome o1 = new Outcome(quiz1, "Slothhhh");
-        outcomeRepository.save(o1);
+        Outcome flamingo = new Outcome(quiz1, "Flamingo");
+        outcomeRepository.save(flamingo);
 
-        Answer a1 = new Answer(q1, o1, "a");
+        Outcome octopus = new Outcome(quiz1, "Octopus");
+        outcomeRepository.save(octopus);
+
+        Outcome panda = new Outcome(quiz1, "Panda");
+        outcomeRepository.save(panda);
+
+//        answers for q1
+        Answer a1 = new Answer(q1, sloth, "A");
         answerRepository.save(a1);
+        q1.addAnswer(a1);
+
+        Answer a2 = new Answer(q1, flamingo, "B");
+        answerRepository.save(a2);
+        q1.addAnswer(a2);
+
+        Answer a3 = new Answer(q1, octopus, "C");
+        answerRepository.save(a3);
+        q1.addAnswer(a3);
+
+        Answer a4 = new Answer(q1, panda, "D");
+        answerRepository.save(a4);
+        q1.addAnswer(a4);
+
     }
 }
