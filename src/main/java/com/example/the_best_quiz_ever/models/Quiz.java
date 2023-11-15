@@ -18,7 +18,7 @@ public class Quiz {
     @Column
     private String name;
     @Column
-    private int currentQuestion;
+    private Long currentQuestion;
 
     @OneToMany(mappedBy = "quiz")
     @JsonIgnoreProperties({"quiz"})
@@ -29,7 +29,7 @@ public class Quiz {
 //    private List<Outcome> outcomes;
 
     //    constructor
-    public Quiz(String name, int currentQuestion) {
+    public Quiz(String name, Long currentQuestion) {
         this.name = name;
 //        this.outcomes = new ArrayList<>();
         this.currentQuestion = currentQuestion;
@@ -81,11 +81,11 @@ public class Quiz {
 //        this.outcomes = outcomes;
 //    }
 
-    public int getCurrentQuestion() {
+    public Long getCurrentQuestion() {
         return currentQuestion;
     }
 
-    public void setCurrentQuestion(int currentQuestion) {
+    public void setCurrentQuestion(Long currentQuestion) {
         this.currentQuestion = currentQuestion;
     }
 
