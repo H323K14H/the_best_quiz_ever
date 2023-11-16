@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class QuizService {
@@ -40,8 +41,8 @@ public class QuizService {
         return quizRepository.findAll();
     }
 
-    public Quiz getQuizById(Long id) {
-        return quizRepository.findById(id).get();
+    public Optional<Quiz> getQuizById(Long id) {
+        return quizRepository.findById(id);
     }
 
 
