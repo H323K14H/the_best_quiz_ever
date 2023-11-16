@@ -13,10 +13,7 @@ import com.example.the_best_quiz_ever.repositories.QuizRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class QuizService {
@@ -71,7 +68,7 @@ public class QuizService {
 //        increment current question.
 
         if (quiz.getCurrentQuestion() > quiz.getSize() - 1) {
-            Outcome finalOutcome = processOutcome(qNumber, quiz);
+            Outcome finalOutcome = processOutcome(quiz);
             OutcomeDTO finalResult = new OutcomeDTO(finalOutcome.getOutcome());
             Reply reply = new Reply(null, finalResult);
             return reply;
@@ -87,7 +84,7 @@ public class QuizService {
 
 //    method - tally results and print outcome
 
-    public Outcome processOutcome(long qNumber, Quiz quiz) {
+    public Outcome processOutcome(Quiz quiz) {
 
         HashMap<Long, Integer> outcomeCounter = new HashMap<>();
         for (Question question : quiz.getAllQuestions()){
@@ -98,6 +95,13 @@ public class QuizService {
                 outcomeCounter.put(currentId, 1);
             }
         }
+
+        resetQuiz(quiz);
+
+        Long winningOutcomeId = Collections.max(outcomeCounter.entrySet(), Map.Entry.comparingByValue()).getKey();
+
+        return outcomeRepository.findById(winningOutcomeId).get();
+
 //        Question finalQuestion = questionRepository.findById(qNumber).get(); //get final question = 10
 //        Answer answer1 = finalQuestion.getAnswers().get(0); //get a37
 //        Answer answer2 = finalQuestion.getAnswers().get(1); //get a38
@@ -146,6 +150,14 @@ public class QuizService {
 //        }
 //
 //        return outcomeRepository.findById(modeId).get();
+    }
+
+    private  void resetQuiz(Quiz quiz){
+        quiz.setCurrentQuestion(quiz.findFirstQuestionID());
+        for (Question question : quiz.getAllQuestions()){
+            question.setOutcome(null);
+            questionRepository.save(question);
+        }
     }
 
 
