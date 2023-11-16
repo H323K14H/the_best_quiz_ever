@@ -48,8 +48,8 @@ public class QuizService {
 
     public Reply startQuiz(Long id) {
         Quiz quiz = quizRepository.findById(id).get();
-        long q1_id = 1;
-        Question q1 = questionRepository.findById(q1_id).get();
+        Long questionId = quiz.findFirstQuestionID();
+        Question q1 = questionRepository.findById(questionId).get();
         Reply reply = new Reply(q1, null);
         return reply;
     }

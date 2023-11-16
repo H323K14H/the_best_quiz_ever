@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.JoinColumnOrFormula;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 @Entity
@@ -57,13 +59,13 @@ public class Quiz {
         this.id = id;
     }
 
-//    public List<Question> getAllQuestions() {
-//        return questions;
-//    }
+    public List<Question> getAllQuestions() {
+        return questions;
+    }
 
-//    public void setQuestions(List<Question> questions) {
-//        this.questions = questions;
-//    }
+    public void setQuestions(List<Question> questions) {
+        this.questions = questions;
+    }
 
     public String getName() {
         return name;
@@ -91,5 +93,16 @@ public class Quiz {
 
     public int getSize() {
         return this.questions.size();
+    }
+
+    public Long findFirstQuestionID() {
+        Question firstQuestion = this.questions.get(0);
+
+        for (Question question : this.questions){
+            if (question.getQuestionNumber() == 1){
+                firstQuestion = question;
+            }
+        }
+        return firstQuestion.getId();
     }
 } // last

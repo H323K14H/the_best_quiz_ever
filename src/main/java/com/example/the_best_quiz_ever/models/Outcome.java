@@ -1,6 +1,7 @@
 package com.example.the_best_quiz_ever.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
@@ -21,7 +22,7 @@ public class Outcome {
 //    @JsonIgnoreProperties ({"outcomes"})
 //    private Quiz quiz;
     @OneToMany(mappedBy = "outcome")
-    @JsonIgnoreProperties({"outcome", "answers"})
+    @JsonIgnore
     private List<Answer> answers;
     @Column
     private String outcome;

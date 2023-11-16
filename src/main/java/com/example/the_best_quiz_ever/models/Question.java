@@ -1,5 +1,6 @@
 package com.example.the_best_quiz_ever.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
@@ -12,7 +13,7 @@ public class Question {
 
     @ManyToOne
     @JoinColumn(name = "quiz_id")
-    @JsonIgnoreProperties({"questions"})
+    @JsonIgnore
     private Quiz quiz;
 
     @Id
@@ -30,10 +31,10 @@ public class Question {
     private List<Answer> answers;
 
 
-//    @ManyToOne
-//    @JoinColumn (name="outcome_id")
-//    @JsonIgnoreProperties ({"question"})  ///@thibyaaaaa
-//    private Outcome outcome;
+    @ManyToOne
+    @JoinColumn (name="outcome_id")
+    @JsonIgnore
+    private Outcome outcome;
 
 
 //    constructors
