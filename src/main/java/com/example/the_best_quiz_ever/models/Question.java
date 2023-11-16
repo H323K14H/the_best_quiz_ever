@@ -42,7 +42,6 @@ public class Question {
     public Question(Quiz quiz, String questionText, int questionNumber) {
         this.quiz = quiz;
         this.questionText = questionText;
-//        this.outcome = outcome;
         this.questionNumber = questionNumber;
         this.answers = new ArrayList<>();
     }
@@ -88,13 +87,13 @@ public class Question {
         this.questionText = questionText;
     }
 
-//    public Outcome getOutcome() {
-//        return outcome;
-//    }
-//
-//    public void setOutcome(Outcome outcome) {
-//        this.outcome = outcome;
-//    }
+    public Outcome getOutcome() {
+        return outcome;
+    }
+
+    public void setOutcome(Outcome outcome) {
+        this.outcome = outcome;
+    }
 
     public int getQuestionNumber() {
         return questionNumber;

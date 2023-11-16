@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
@@ -62,13 +63,15 @@ public class QuizService {
 //        Save the outcome id to selectedOptions ArrayList.
         Answer answer = answerRepository.findById(answerId).get();
         Outcome outcome = answer.getOutcome();
-        Long outcomeId = outcome.getId();
-        selectedOptions.add(outcomeId);
+        Question targetQuestion = quiz.findQuestionByNumber(qNumber);
+        targetQuestion.setOutcome(outcome);
+        questionRepository.save(targetQuestion);
+
 
 //        increment current question.
 
         if (quiz.getCurrentQuestion() > quiz.getSize() - 1) {
-            Outcome finalOutcome = processOutcome(selectedOptions, qNumber);
+            Outcome finalOutcome = processOutcome(qNumber, quiz);
             OutcomeDTO finalResult = new OutcomeDTO(finalOutcome.getOutcome());
             Reply reply = new Reply(null, finalResult);
             return reply;
@@ -84,55 +87,65 @@ public class QuizService {
 
 //    method - tally results and print outcome
 
-    public Outcome processOutcome(List<Long> selectedOption, long qNumber) {
-        Question finalQuestion = questionRepository.findById(qNumber).get(); //get final question = 10
-        Answer answer1 = finalQuestion.getAnswers().get(0); //get a37
-        Answer answer2 = finalQuestion.getAnswers().get(1); //get a38
-        Answer answer3 = finalQuestion.getAnswers().get(2); //get a39
-        Answer answer4 = finalQuestion.getAnswers().get(3); //get a40
+    public Outcome processOutcome(long qNumber, Quiz quiz) {
 
-        long outcome1Id = answer1.getOutcome().getId();  //get outcome Id for each answer a37 - oucomeid =1 (unless randomized)
-        long outcome2Id = answer2.getOutcome().getId(); //get outcome Id for each answer a38 - oucomeid =2
-        long outcome3Id = answer3.getOutcome().getId(); //get outcome Id for each answer a39 - oucomeid =3
-        long outcome4Id = answer4.getOutcome().getId(); //get outcome Id for each answer a40 - oucomeid =4
-
-        int count1 = 0; //sets all outcome_id counts to 0
-        int count2 = 0;
-        int count3 = 0;
-        int count4 = 0;
-
-//      count for each outcome
-        for (Long outcomeId : selectedOption) {
-            if (outcomeId == outcome1Id) {
-                count1 += 1;
-            } else if (outcomeId == outcome2Id) {
-                count2 += 1;
-            } else if (outcomeId == outcome3Id) {
-                count3 += 1;
-            } else if (outcomeId == outcome4Id) {
-                count4 += 1;
+        HashMap<Long, Integer> outcomeCounter = new HashMap<>();
+        for (Question question : quiz.getAllQuestions()){
+            Long currentId = question.getOutcome().getId();
+            if (outcomeCounter.containsKey(currentId)){
+                outcomeCounter.replace(currentId, outcomeCounter.get(currentId) + 1);
+            } else {
+                outcomeCounter.put(currentId, 1);
             }
-
         }
-        Long modeId = outcome1Id;
-        int modeCount = count1;
-
-        if (count2 > modeCount) {
-            modeCount = count2;
-            modeId = outcome2Id;
-        }
-
-        if (count3 > modeCount) {
-            modeCount = count3;
-            modeId = outcome3Id;
-        }
-
-        if (count4 > modeCount) {
-            modeCount = count4;
-            modeId = outcome4Id;
-        }
-
-        return outcomeRepository.findById(modeId).get();
+//        Question finalQuestion = questionRepository.findById(qNumber).get(); //get final question = 10
+//        Answer answer1 = finalQuestion.getAnswers().get(0); //get a37
+//        Answer answer2 = finalQuestion.getAnswers().get(1); //get a38
+//        Answer answer3 = finalQuestion.getAnswers().get(2); //get a39
+//        Answer answer4 = finalQuestion.getAnswers().get(3); //get a40
+//
+//        long outcome1Id = answer1.getOutcome().getId();  //get outcome Id for each answer a37 - oucomeid =1 (unless randomized)
+//        long outcome2Id = answer2.getOutcome().getId(); //get outcome Id for each answer a38 - oucomeid =2
+//        long outcome3Id = answer3.getOutcome().getId(); //get outcome Id for each answer a39 - oucomeid =3
+//        long outcome4Id = answer4.getOutcome().getId(); //get outcome Id for each answer a40 - oucomeid =4
+//
+//        int count1 = 0; //sets all outcome_id counts to 0
+//        int count2 = 0;
+//        int count3 = 0;
+//        int count4 = 0;
+//
+////      count for each outcome
+//        for (Long outcomeId : selectedOption) {
+//            if (outcomeId == outcome1Id) {
+//                count1 += 1;
+//            } else if (outcomeId == outcome2Id) {
+//                count2 += 1;
+//            } else if (outcomeId == outcome3Id) {
+//                count3 += 1;
+//            } else if (outcomeId == outcome4Id) {
+//                count4 += 1;
+//            }
+//
+//        }
+//        Long modeId = outcome1Id;
+//        int modeCount = count1;
+//
+//        if (count2 > modeCount) {
+//            modeCount = count2;
+//            modeId = outcome2Id;
+//        }
+//
+//        if (count3 > modeCount) {
+//            modeCount = count3;
+//            modeId = outcome3Id;
+//        }
+//
+//        if (count4 > modeCount) {
+//            modeCount = count4;
+//            modeId = outcome4Id;
+//        }
+//
+//        return outcomeRepository.findById(modeId).get();
     }
 
 

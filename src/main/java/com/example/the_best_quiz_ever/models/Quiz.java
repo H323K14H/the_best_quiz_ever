@@ -105,4 +105,15 @@ public class Quiz {
         }
         return firstQuestion.getId();
     }
+
+    public Question findQuestionByNumber(Long questionNumber) {
+        for (Question question : this.questions){
+            if (question.getQuestionNumber() == questionNumber) {
+                return question;
+            }
+        }
+        return null;
+    }
+
+
 } // last

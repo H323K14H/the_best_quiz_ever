@@ -38,7 +38,7 @@ public class DataLoader implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
 
 //        quiz 1
-        Quiz quiz1 = new Quiz("Animal Quiz", 1L);
+        Quiz quiz1 = new Quiz("Animal Quiz", null);
         quizRepository.save(quiz1);
 
 //        create questions
@@ -62,6 +62,8 @@ public class DataLoader implements ApplicationRunner {
         questionRepository.save(q5);
         quiz1.addQuestion(q5);
 
+
+        quiz1.setCurrentQuestion(q1.getId());
         quizRepository.save(quiz1);
 
 //      create outcomes
@@ -193,6 +195,21 @@ public class DataLoader implements ApplicationRunner {
         quiz1.addQuestion(q2_5);
 
         quizRepository.save(quiz2);
+
+        Outcome mulan = new Outcome(quiz1, "Mulan");
+        outcomeRepository.save(mulan);
+
+        Outcome jasmine = new Outcome(quiz1, "Jasmine");
+        outcomeRepository.save(jasmine);
+
+        Outcome tiana = new Outcome(quiz1, "Tiana");
+        outcomeRepository.save(tiana);
+
+        Outcome cinderella = new Outcome(quiz1, "Cinderella");
+        outcomeRepository.save(cinderella);
+
+
+
 
 
     }
