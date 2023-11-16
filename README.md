@@ -1,6 +1,6 @@
- # :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: 
+# :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar:
 
- ### :point_down:  :point_down: :point_down: :point_down: HEY :point_down: YOU!  :point_down:  :point_down: :point_down: :point_down:
+### :point_down:  :point_down: :point_down: :point_down: HEY :point_down: YOU!  :point_down:  :point_down: :point_down: :point_down:
 
 # YEAH _YOU!_ :punch:
 
@@ -14,7 +14,6 @@ This is a Java Spring Boot project for playing and managing quizzes. It includes
 Answer, Quiz, and Question. The QuizController provides endpoints to interact with the quiz functionalities.
 
 # :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar:
-
 
 ### Key Functionality
 
@@ -46,6 +45,24 @@ The MVP is able to:
 - **Endpoint:** `GET /quizzes`
 - **Description:** Get a list of all available quizzes
 - **Response:** Returns a list of Quiz objects
+
+```json
+   [
+    {
+        "id": 1,
+        "name": "Animal Quiz",
+        "currentQuestion": 1,
+        "size": 5
+    },
+    {
+        "id": 2,
+        "name": "Disney Princess Quiz",
+        "currentQuestion": 2,
+        "size": 5
+    }
+ 
+  ]
+```
 - **HTTP Status:** 200 OK
 
 ### Start a New Quiz
