@@ -83,6 +83,9 @@ public class DataLoader implements ApplicationRunner {
         questionRepository.save(q10);
         quiz1.addQuestion(q10);
 
+
+
+
         quizRepository.save(quiz1);
 
 //      create outcomes
@@ -131,6 +134,22 @@ public class DataLoader implements ApplicationRunner {
         Answer a8 = new Answer(q2, panda, "D");
         answerRepository.save(a8);
         q2.addAnswer(a8);
+
+
+/////////////////DELETE //////////////
+
+        Answer a37 = new Answer(q10, sloth, "A");
+        answerRepository.save(a37);
+        q10.addAnswer(a37);
+        Answer a38 = new Answer(q10, flamingo, "B");
+        answerRepository.save(a38);
+        q10.addAnswer(a38);
+        Answer a39 = new Answer(q10, octopus, "C");
+        answerRepository.save(a39);
+        q10.addAnswer(a39);
+        Answer a40 = new Answer(q10, panda, "D");
+        answerRepository.save(a40);
+        q10.addAnswer(a40);
 
     }
 }

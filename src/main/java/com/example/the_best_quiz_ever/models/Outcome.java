@@ -26,7 +26,7 @@ public class Outcome {
     @Column
     private String outcome;
 //    @OneToMany (mappedBy = "outcome")
-//    @JsonIgnoreProperties({"outcome"})
+//    @JsonIgnoreProperties({"outcome"})   //thibyaaa
 //    private Question question;
 
     public Outcome(Quiz quiz, String outcome) {
