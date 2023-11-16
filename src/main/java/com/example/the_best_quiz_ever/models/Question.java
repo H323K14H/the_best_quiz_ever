@@ -32,7 +32,7 @@ public class Question {
 
 //    @ManyToOne
 //    @JoinColumn (name="outcome_id")
-//    @JsonIgnoreProperties ({"question"})
+//    @JsonIgnoreProperties ({"question"})  ///@thibyaaaaa
 //    private Outcome outcome;
 
 

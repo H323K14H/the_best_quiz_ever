@@ -37,7 +37,7 @@ public class DataLoader implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
-//        create new quiz
+//        quiz 1
         Quiz quiz1 = new Quiz("Animal Quiz", 1L);
         quizRepository.save(quiz1);
 
@@ -113,7 +113,7 @@ public class DataLoader implements ApplicationRunner {
         answerRepository.save(a8);
         q2.addAnswer(a8);
 
-
+      
         //        answers for q3
         Answer a9 = new Answer(q3, sloth, "Free Global Healthcare");
         answerRepository.save(a9);
@@ -193,7 +193,6 @@ public class DataLoader implements ApplicationRunner {
         quiz1.addQuestion(q2_5);
 
         quizRepository.save(quiz2);
-
 
 
     }
