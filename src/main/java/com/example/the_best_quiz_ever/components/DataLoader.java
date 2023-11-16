@@ -208,8 +208,91 @@ public class DataLoader implements ApplicationRunner {
         Outcome cinderella = new Outcome(quiz1, "Cinderella");
         outcomeRepository.save(cinderella);
 
+        //        answers for quiz 2, question 1
+        Answer q2_a1 = new Answer(q2_1, mulan, "Loyalty");
+        answerRepository.save(q2_a1);
+        q1.addAnswer(q2_a1);
+
+        Answer q2_a2 = new Answer(q2_1, jasmine, "Truthfulness");
+        answerRepository.save(q2_a2);
+        q1.addAnswer(q2_a2);
+
+        Answer q2_a3 = new Answer(q2_1, tiana, "Dependability");
+        answerRepository.save(q2_a3);
+        q1.addAnswer(q2_a3);
+
+        Answer q2_a4 = new Answer(q2_1, cinderella, "Humour");
+        answerRepository.save(q2_a4);
+        q1.addAnswer(q2_a4);
+
+//       answers for quiz 2, question 2
+        Answer q2_a5 = new Answer(q2_2, mulan, "Narnia");
+        answerRepository.save(q2_a5);
+        q1.addAnswer(q2_a5);
+
+        Answer q2_a6 = new Answer(q2_2, jasmine, "The Hobbit");
+        answerRepository.save(q2_a6);
+        q1.addAnswer(q2_a6);
+
+        Answer q2_a7 = new Answer(q2_2, tiana, "Harry Potter");
+        answerRepository.save(q2_a7);
+        q1.addAnswer(q2_a7);
+
+        Answer q2_a8 = new Answer(q2_2, cinderella, "Wakanda");
+        answerRepository.save(q2_a8);
+        q1.addAnswer(q2_a8);
 
 
+        //       answers for quiz 2, question 3
+        Answer q2_a9 = new Answer(q2_3, mulan, "Fierce");
+        answerRepository.save(q2_a9);
+        q1.addAnswer(q2_a9);
+
+        Answer q2_a10 = new Answer(q2_3, jasmine, "Elegant");
+        answerRepository.save(q2_a10);
+        q1.addAnswer(q2_a10);
+
+        Answer q2_a11 = new Answer(q2_3, tiana, "Hardworking");
+        answerRepository.save(q2_a11);
+        q1.addAnswer(q2_a11);
+
+        Answer q2_a12 = new Answer(q2_3, cinderella, "Hopeful");
+        answerRepository.save(q2_a12);
+        q1.addAnswer(q2_a12);
+
+        //       answers for quiz 2, question 4
+        Answer q2_a13 = new Answer(q2_4, mulan, "Disney");
+        answerRepository.save(q2_a13);
+        q1.addAnswer(q2_a13);
+
+        Answer q2_a14 = new Answer(q2_4, jasmine, "Netflix");
+        answerRepository.save(q2_a14);
+        q1.addAnswer(q2_a14);
+
+        Answer q2_a15 = new Answer(q2_4, tiana, "HBO");
+        answerRepository.save(q2_a15);
+        q1.addAnswer(q2_a15);
+
+        Answer q2_a16 = new Answer(q2_4, cinderella, "I'd rather read a book");
+        answerRepository.save(q2_a16);
+        q1.addAnswer(q2_a16);
+
+        //       answers for quiz 2, question 5
+        Answer q2_a17 = new Answer(q2_5, mulan, "Super extroverted");
+        answerRepository.save(q2_a17);
+        q1.addAnswer(q2_a17);
+
+        Answer q2_a18 = new Answer(q2_5, jasmine, "Extroverted");
+        answerRepository.save(q2_a18);
+        q1.addAnswer(q2_a18);
+
+        Answer q2_a19 = new Answer(q2_5, tiana, "Introverted");
+        answerRepository.save(q2_a19);
+        q1.addAnswer(q2_a19);
+
+        Answer q2_a20 = new Answer(q2_5, cinderella, "Super Introverted");
+        answerRepository.save(q2_a20);
+        q1.addAnswer(q2_a20);
 
 
     }
