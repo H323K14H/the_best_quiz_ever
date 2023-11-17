@@ -1,4 +1,4 @@
-# :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar:
+# :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: 
 
 ### :point_down:  :point_down: :point_down: :point_down: HEY :point_down: YOU!  :point_down:  :point_down: :point_down: :point_down:
 
@@ -11,13 +11,13 @@
 
 ## :no_good: FRET NO LONGER! :no_good:
 
-# :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar:
+# :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: 
 
 ### Welcome to a new era of quizzing with the Best Quiz Ever!!!
 
 This Java Spring Boot project is a revolutionary step forward in the world of quizzes, providing you with the power to create, play, and manage quizzes with ease and efficiency. Whether you're a quizmaster extraordinaire or a casual quiz enthusiast, this project has something for everyone. The QuizController provides endpoints for you, OUR USER, to interact with the quiz functionalities! :computer:
 
-# :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar:
+# :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: 
 
 ## Key Functionality:
 
@@ -36,7 +36,7 @@ This Java Spring Boot project is a revolutionary step forward in the world of qu
 * Created `POST` Request to allow for quizzes to be replayed
 * Refactoring the link between the Outcome and the Question model to store the outcome id
 
-# :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar:
+# :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: 
 
 ## Model Classes:
 
@@ -334,4 +334,4 @@ PLEASE DO NOT SKIP `qNumber` OTHERWISE THE QUIZ WILL CRASH!
 * C0L1N
 * TH18Y44444
 
-# :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar:
+# :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: 
