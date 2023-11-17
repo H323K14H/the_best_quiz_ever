@@ -67,7 +67,7 @@ public class QuizService {
 
 //        increment current question.
 
-        if (quiz.getCurrentQuestion() > quiz.getSize() - 1) {
+        if (/*quiz.getCurrentQuestion()*/ qNumber > quiz.getSize() - 1) {
             Outcome finalOutcome = processOutcome(quiz);
             OutcomeDTO finalResult = new OutcomeDTO(finalOutcome.getOutcome());
             Reply reply = new Reply(null, finalResult);

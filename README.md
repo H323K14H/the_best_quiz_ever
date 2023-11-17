@@ -2,22 +2,26 @@
 
 ### :point_down:  :point_down: :point_down: :point_down: HEY :point_down: YOU!  :point_down:  :point_down: :point_down: :point_down:
 
-# YEAH _YOU!_ :punch:
+# :punch: YEAH _YOU!_ :punch:
 
-#### :scream_cat: ARE YOU TIRED OF THESE QUIZZES THAT CAN'T TELL YOU ACCURATELY WHAT ANIMAL YOU'D BE? :scream_cat:
 
-# WELL SAME HERE!!! :information_desk_person:
+#### :scream_cat: :crown: ARE YOU TIRED OF THESE QUIZZES THAT CAN'T TELL YOU ACCURATELY WHAT _ANIMAL_ OR _DISNEY PRINCESS_ YOU'D BE? :crown: :scream_cat:
+
+# :information_desk_person: WELL SAME HERE!!! :information_desk_person:
 
 ## :no_good: FRET NO LONGER! :no_good:
 
-This is a Java Spring Boot project for playing and managing quizzes. It includes model classes for Outcome, Reply,
-Answer, Quiz, and Question. The QuizController provides endpoints to interact with the quiz functionalities.
+# :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar:
+
+### Welcome to a new era of quizzing with the Best Quiz Ever!!!
+
+This Java Spring Boot project is a revolutionary step forward in the world of quizzes, providing you with the power to create, play, and manage quizzes with ease and efficiency. Whether you're a quizmaster extraordinaire or a casual quiz enthusiast, this project has something for everyone. The QuizController provides endpoints for you, OUR USER, to interact with the quiz functionalities! :computer:
 
 # :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar:
 
-### Key Functionality:
+## Key Functionality:
 
-The MVP is able to:
+### The MVP is able to:
 
 * Add quizzes, questions, answers and **4** possible outcomes within a DataLoader
 * Display a particular quiz by its id via **Endpoint:** `GET /quizzes/{id}`
@@ -28,7 +32,11 @@ The MVP is able to:
 
 ### Extensions:
 
-* Display all quiz questions
+* Display all quiz questions and corresponding questions
+* Created `POST` Request to allow for quizzes to be replayed
+* Refactoring the link between the Outcome and the Question model to store the outcome id
+
+# :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar:
 
 ## Model Classes:
 
@@ -37,6 +45,11 @@ The MVP is able to:
 - **Answer**: Represents an answer to a quiz question
 - **Quiz**: Represents a quiz
 - **Question**: Represents a question in a quiz
+
+## PREREQUISITES:
+- Clone the project from the [remote repository](https://github.com/H323K14H/the_best_quiz_ever) 
+- Open the project in IntelliJ
+- Go to the terminal and create a database called “quiz_db” by running the command `createdb quiz_db`
 
 ## QuizController Endpoints:
 
@@ -247,6 +260,7 @@ The MVP is able to:
 - **Description:** Choose an option for a quiz question
 - **Request Body:** ChoiceDTO containing answerId and qNumber:
 
+
 ```json
 {
   "qNumber": 1,
@@ -284,11 +298,40 @@ The MVP is able to:
   "outcomeDTO": null
 }
 ```
+- **HTTP Status:** 200 OK
+
+_DISCLAIMER:_
+PLEASE DO NOT SKIP `qNumber` OTHERWISE THE QUIZ WILL CRASH!
+* `qNumber` will always be `1-5`
+* `answerId` will correspond to the response shown above. The `answerId` range for quiz1 is `1-20` and for quiz2 it is `21-40`
+
+### QUIZ RESULTS:
+* The `outcomeDTO` will remain `null` until the end of the quiz 
+* `nextQuestion` will become `null` at the end of the quiz
+* The `outcomeId` associated with each question will reset to `null` once an `outcomeDTO` has been provided (this makes the quiz replayable and _SCALABLE_)
+
+```json
+{
+    "nextQuestion": null,
+    "outcomeDTO": {
+        "finalResult": "You are a Panderrrrrrrrrrrrrrr!"
+    }
+}
+```
 
 - **HTTP Status:** 200 OK
 
-## Usage
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/H323K14H/the-best-quiz-ever.git
+## THE PEOPLE WHO MADE IT HAPPEN:
+* R0513
+* H323
+* N4TH
+* 54M
+* F0R1D
+
+### HONORARY MENTIONZ:
+* 250LT
+* C0L1N
+* TH18Y44444
+
+# :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar: :guitar:

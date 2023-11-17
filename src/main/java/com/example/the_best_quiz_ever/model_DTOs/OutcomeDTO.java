@@ -12,7 +12,7 @@ public class OutcomeDTO {
     }
 
     public String getFinalResult() {
-        return "You are a " + finalResult + "!";
+        return "You are " + finalResult + "!";
     }
 
     public void setFinalResult(String finalResult) {

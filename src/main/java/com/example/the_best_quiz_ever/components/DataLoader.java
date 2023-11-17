@@ -67,16 +67,16 @@ public class DataLoader implements ApplicationRunner {
         quizRepository.save(quiz1);
 
 //      create outcomes
-        Outcome sloth = new Outcome(quiz1, "Sloth");
+        Outcome sloth = new Outcome(quiz1, "a Slothhhhhhh");
         outcomeRepository.save(sloth);
 
-        Outcome flamingo = new Outcome(quiz1, "Flamingo");
+        Outcome flamingo = new Outcome(quiz1, "a Flamingoooooo");
         outcomeRepository.save(flamingo);
 
-        Outcome octopus = new Outcome(quiz1, "Octopus");
+        Outcome octopus = new Outcome(quiz1, "an Oooooooooooooctopus");
         outcomeRepository.save(octopus);
 
-        Outcome panda = new Outcome(quiz1, "Panda");
+        Outcome panda = new Outcome(quiz1, "a Panderrrrrrrrrrrrrrr");
         outcomeRepository.save(panda);
 
         //        answers for q1
@@ -170,129 +170,130 @@ public class DataLoader implements ApplicationRunner {
         q5.addAnswer(a20);
 
 //        quiz 2
-        Quiz quiz2 = new Quiz("Disney Princess Quiz", 1L);
+        Quiz quiz2 = new Quiz("Disney Princess Quiz", null);
         quizRepository.save(quiz2);
 
 //        questions for quiz 2
         Question q2_1 = new Question(quiz2, "What do you value most in friendship?", 1);
         questionRepository.save(q2_1);
-        quiz1.addQuestion(q2_1);
+        quiz2.addQuestion(q2_1);
 
         Question q2_2 = new Question(quiz2, "What fictional world would you most like to inhabit?", 2);
         questionRepository.save(q2_2);
-        quiz1.addQuestion(q2_2);
+        quiz2.addQuestion(q2_2);
 
         Question q2_3 = new Question(quiz2, "Describe your aura in one word", 3);
         questionRepository.save(q2_3);
-        quiz1.addQuestion(q2_3);
+        quiz2.addQuestion(q2_3);
 
         Question q2_4 = new Question(quiz2, "What would you rather watch - Disney, Netflix or HBO?", 4);
         questionRepository.save(q2_4);
-        quiz1.addQuestion(q2_4);
+        quiz2.addQuestion(q2_4);
 
         Question q2_5 = new Question(quiz2, "Do you consider yourself an extrovert or an introvert?", 5);
         questionRepository.save(q2_5);
-        quiz1.addQuestion(q2_5);
+        quiz2.addQuestion(q2_5);
 
+        quiz2.setCurrentQuestion(q2_1.getId());
         quizRepository.save(quiz2);
 
-        Outcome mulan = new Outcome(quiz1, "Mulan");
+        Outcome mulan = new Outcome(quiz2, "Mulan");
         outcomeRepository.save(mulan);
 
-        Outcome jasmine = new Outcome(quiz1, "Jasmine");
+        Outcome jasmine = new Outcome(quiz2, "Jasmine");
         outcomeRepository.save(jasmine);
 
-        Outcome tiana = new Outcome(quiz1, "Tiana");
+        Outcome tiana = new Outcome(quiz2, "Tiana");
         outcomeRepository.save(tiana);
 
-        Outcome cinderella = new Outcome(quiz1, "Cinderella");
+        Outcome cinderella = new Outcome(quiz2, "Cinderella");
         outcomeRepository.save(cinderella);
 
         //        answers for quiz 2, question 1
         Answer q2_a1 = new Answer(q2_1, mulan, "Loyalty");
         answerRepository.save(q2_a1);
-        q1.addAnswer(q2_a1);
+        q2_1.addAnswer(q2_a1);
 
         Answer q2_a2 = new Answer(q2_1, jasmine, "Truthfulness");
         answerRepository.save(q2_a2);
-        q1.addAnswer(q2_a2);
+        q2_1.addAnswer(q2_a2);
 
-        Answer q2_a3 = new Answer(q2_1, tiana, "Dependability");
+        Answer q2_a3 = new Answer(q2_1, tiana, "Fakeness");
         answerRepository.save(q2_a3);
-        q1.addAnswer(q2_a3);
+        q2_1.addAnswer(q2_a3);
 
         Answer q2_a4 = new Answer(q2_1, cinderella, "Humour");
         answerRepository.save(q2_a4);
-        q1.addAnswer(q2_a4);
+        q2_1.addAnswer(q2_a4);
 
 //       answers for quiz 2, question 2
         Answer q2_a5 = new Answer(q2_2, mulan, "Narnia");
         answerRepository.save(q2_a5);
-        q1.addAnswer(q2_a5);
+        q2_2.addAnswer(q2_a5);
 
         Answer q2_a6 = new Answer(q2_2, jasmine, "The Hobbit");
         answerRepository.save(q2_a6);
-        q1.addAnswer(q2_a6);
+        q2_2.addAnswer(q2_a6);
 
         Answer q2_a7 = new Answer(q2_2, tiana, "Harry Potter");
         answerRepository.save(q2_a7);
-        q1.addAnswer(q2_a7);
+        q2_2.addAnswer(q2_a7);
 
         Answer q2_a8 = new Answer(q2_2, cinderella, "Wakanda");
         answerRepository.save(q2_a8);
-        q1.addAnswer(q2_a8);
+        q2_2.addAnswer(q2_a8);
 
 
         //       answers for quiz 2, question 3
         Answer q2_a9 = new Answer(q2_3, mulan, "Fierce");
         answerRepository.save(q2_a9);
-        q1.addAnswer(q2_a9);
+        q2_3.addAnswer(q2_a9);
 
         Answer q2_a10 = new Answer(q2_3, jasmine, "Elegant");
         answerRepository.save(q2_a10);
-        q1.addAnswer(q2_a10);
+        q2_3.addAnswer(q2_a10);
 
         Answer q2_a11 = new Answer(q2_3, tiana, "Hardworking");
         answerRepository.save(q2_a11);
-        q1.addAnswer(q2_a11);
+        q2_3.addAnswer(q2_a11);
 
         Answer q2_a12 = new Answer(q2_3, cinderella, "Hopeful");
         answerRepository.save(q2_a12);
-        q1.addAnswer(q2_a12);
+        q2_3.addAnswer(q2_a12);
 
         //       answers for quiz 2, question 4
         Answer q2_a13 = new Answer(q2_4, mulan, "Disney");
         answerRepository.save(q2_a13);
-        q1.addAnswer(q2_a13);
+        q2_4.addAnswer(q2_a13);
 
         Answer q2_a14 = new Answer(q2_4, jasmine, "Netflix");
         answerRepository.save(q2_a14);
-        q1.addAnswer(q2_a14);
+        q2_4.addAnswer(q2_a14);
 
         Answer q2_a15 = new Answer(q2_4, tiana, "HBO");
         answerRepository.save(q2_a15);
-        q1.addAnswer(q2_a15);
+        q2_4.addAnswer(q2_a15);
 
         Answer q2_a16 = new Answer(q2_4, cinderella, "I'd rather read a book");
         answerRepository.save(q2_a16);
-        q1.addAnswer(q2_a16);
+        q2_4.addAnswer(q2_a16);
 
         //       answers for quiz 2, question 5
         Answer q2_a17 = new Answer(q2_5, mulan, "Super extroverted");
         answerRepository.save(q2_a17);
-        q1.addAnswer(q2_a17);
+        q2_5.addAnswer(q2_a17);
 
         Answer q2_a18 = new Answer(q2_5, jasmine, "Extroverted");
         answerRepository.save(q2_a18);
-        q1.addAnswer(q2_a18);
+        q2_5.addAnswer(q2_a18);
 
         Answer q2_a19 = new Answer(q2_5, tiana, "Introverted");
         answerRepository.save(q2_a19);
-        q1.addAnswer(q2_a19);
+        q2_5.addAnswer(q2_a19);
 
         Answer q2_a20 = new Answer(q2_5, cinderella, "Super Introverted");
         answerRepository.save(q2_a20);
-        q1.addAnswer(q2_a20);
+        q2_5.addAnswer(q2_a20);
 
 
     }
